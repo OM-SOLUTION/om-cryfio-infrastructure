@@ -1,0 +1,2 @@
+# Settings the replica bucket must have, whichever provider hosts it: versioning, old versions
+# deleted after 14 days, no public access, and encryption at rest.

@@ -1,0 +1,2 @@
+# Runs the Spring Boot backend. Until the real image exists, a small stub answers
+# on /health so the rest of the cluster can be tested.

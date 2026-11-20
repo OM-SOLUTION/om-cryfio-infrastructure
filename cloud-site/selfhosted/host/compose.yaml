@@ -1,0 +1,2 @@
+# Runs MinIO on the self-hosted cloud server. It listens only on the WireGuard interface,
+# so the bucket can be reached through the tunnel and never from the internet.

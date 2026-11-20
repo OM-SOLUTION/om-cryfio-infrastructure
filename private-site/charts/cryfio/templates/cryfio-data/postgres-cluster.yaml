@@ -1,0 +1,2 @@
+# Main PostgreSQL database (file metadata, key envelopes, audit log), managed by
+# CloudNativePG. Its write-ahead log is archived continuously to the cloud bucket.

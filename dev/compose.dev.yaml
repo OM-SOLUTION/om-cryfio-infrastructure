@@ -1,0 +1,2 @@
+# Local PostgreSQL, MinIO and Dolibarr with the same settings as the cluster,
+# so the backend can be developed and tested before the private site is running.

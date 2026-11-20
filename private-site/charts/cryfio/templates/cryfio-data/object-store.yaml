@@ -1,0 +1,2 @@
+# Object store holding the encrypted files. MinIO is used during development;
+# production uses Garage.

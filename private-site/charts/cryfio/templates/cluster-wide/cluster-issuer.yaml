@@ -1,0 +1,3 @@
+# Certificate issuer for the cluster. With tls.mode letsencrypt it uses Let's Encrypt (staging first,
+# then production). With tls.mode selfsigned it creates a local certificate authority inside the
+# cluster, for plans with no public domain.

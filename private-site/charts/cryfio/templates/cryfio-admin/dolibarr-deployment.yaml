@@ -1,0 +1,2 @@
+# Runs Dolibarr, the ERP used for administration. It talks to the backend
+# through an internal admin API secured with mutual TLS.

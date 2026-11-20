@@ -1,0 +1,2 @@
+# WireGuard tunnel to the cloud site. It runs on the server's own network so every pod
+# reaches the cloud bucket through the tunnel, and nothing reaches it any other way.

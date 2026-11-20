@@ -1,0 +1,2 @@
+# Scheduled rclone job copying the encrypted files from the object store to the cloud bucket.
+# It stops if a run would delete more files than a set limit, to protect the replica.

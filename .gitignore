@@ -1,0 +1,13 @@
+# Files that must never be committed: real profiles, merged configs, Terraform state, keys and decrypted secrets.
+profiles/*.yaml
+!profiles/*.example.yaml
+build/
+state/
+*.tfstate
+*.tfstate.*
+.terraform/
+*.auto.tfvars
+age.key
+*.age
+kubeconfig*
+secrets/*.dec.*

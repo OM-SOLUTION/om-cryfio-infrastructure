@@ -1,0 +1,2 @@
+# Scheduled full backups of both PostgreSQL databases (application and Dolibarr)
+# to the cloud bucket. Combined with the archived WAL they allow point-in-time restore.

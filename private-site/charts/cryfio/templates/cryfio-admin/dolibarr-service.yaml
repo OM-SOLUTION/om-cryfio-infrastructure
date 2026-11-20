@@ -1,0 +1,2 @@
+# Internal network address for Dolibarr. It is reachable only inside the cluster,
+# never from the internet.

@@ -1,0 +1,14 @@
+# Plan "local": the private site and the self-hosted cloud site run on two servers on the same
+# local network. No public domain and no internet exposure. Test data only.
+profile: local
+domain: cryfio.test                  # reserved test name, resolved through each client's hosts file
+tls:
+  mode: selfsigned                   # no public domain, so Let's Encrypt cannot be used
+cloud:
+  provider: selfhosted
+  wireguard:
+    server_endpoint: "192.168.1.44"  # LAN address of the cloud-site server (verify after reinstall)
+private_site:
+  kubeconfig: ~/.kube/cryfio-local.yaml
+object_store:
+  type: minio                        # test data only

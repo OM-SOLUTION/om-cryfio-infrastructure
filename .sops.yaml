@@ -1,0 +1,5 @@
+# Tells SOPS how to encrypt secrets: every secrets/*.enc.yaml file is encrypted with the age key below.
+# TODO: generate a key with `age-keygen` and replace the placeholder with its public key.
+creation_rules:
+  - path_regex: secrets/.*\.enc\.yaml$
+    age: "TODO-age-public-key"

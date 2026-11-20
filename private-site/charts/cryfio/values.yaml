@@ -1,0 +1,2 @@
+# Settings for the cryfio chart. Left empty here: Terraform fills them from config.yaml at deploy time.
+{}

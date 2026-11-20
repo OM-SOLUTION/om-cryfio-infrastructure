@@ -1,0 +1,46 @@
+# Default configuration shared by every plan. Put what differs for a plan in profiles/<name>.yaml.
+# 'make plan PROFILE=<name>' merges the two into build/<name>/config.yaml, which Terraform and the
+# Helm chart read, and lists every CHANGEME and TODO still to fill in before the first deploy.
+project: om-cryfio
+domain: example.com                 # CHANGEME: the project's domain name
+hosts:
+  api: api                          # api.<domain> leads to the backend
+  s3: s3                            # s3.<domain> leads to the object store
+acme:
+  email: you@example.com            # CHANGEME: Let's Encrypt sends certificate notices here
+  environment: staging              # staging while testing, production once it works
+cloud:
+  provider: selfhosted              # which cloud site to use: selfhosted, aws or s3compatible
+  wireguard:
+    tunnel_cidr: 10.99.0.0/29       # private addresses used inside the tunnel (example value)
+    port: 51820                     # UDP port the WireGuard server listens on
+    server_endpoint: ""             # TODO: public address of the cloud server
+  bucket:
+    name: om-cryfio-replica         # must be unique across all of AWS if AWS is used
+    versioning: true                # keep older versions of each file
+    noncurrent_expiry_days: 14      # delete old versions after this many days (proposed value)
+  aws:
+    region: eu-west-3               # AWS region, Paris (proposed)
+    instance_type: ""               # TODO: t4g.nano (ARM, as in the SRS) or t3.nano (x86)
+    budget_usd: 0                   # TODO: monthly spending limit that triggers an alert
+    budget_email: ""                # TODO: who receives the budget alert
+private_site:
+  kubeconfig: ~/.kube/cryfio.yaml   # credentials file used to reach the cluster
+  storage_class: local-path         # k3s's built-in storage on the server's disk
+  backend:
+    image: ""                       # TODO: backend image, once it is published
+    tag: ""
+    replicas: 1                     # number of backend copies (not set by the SRS yet)
+  monitoring:
+    enabled: true                   # Prometheus and Grafana
+    loki_enabled: false             # log collection, off until decided
+object_store:
+  type: minio                       # minio for development; garage in production
+versions:                           # TODO: pin every image and chart version, then check them with scripts/verify-images.sh
+  k3s: ""
+  cert_manager_chart: ""
+  cloudnative_pg_chart: ""
+  kube_prometheus_stack_chart: ""
+  minio_image: ""
+  dolibarr_image: ""
+  postgres_image: ""

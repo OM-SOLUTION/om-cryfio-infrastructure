@@ -1,0 +1,2 @@
+# Firewall rules between namespaces: all traffic is blocked by default,
+# and only the connections the platform needs are allowed.

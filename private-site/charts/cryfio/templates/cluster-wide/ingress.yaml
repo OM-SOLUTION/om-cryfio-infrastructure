@@ -1,0 +1,2 @@
+# Public entry points through Traefik: api.<domain> goes to the backend,
+# s3.<domain> goes to the object store. Both use HTTPS.

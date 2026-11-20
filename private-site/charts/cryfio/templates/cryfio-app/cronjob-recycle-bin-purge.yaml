@@ -1,0 +1,2 @@
+# Scheduled job that permanently deletes files left in the Recycle Bin
+# longer than the retention period.
